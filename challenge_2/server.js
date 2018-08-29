@@ -14,8 +14,8 @@ app.use(express.static(path.join(__dirname, '/client')));
 
 app.post('/csv', bodyParser.json(), function(req, res) {
   console.log('POST request has been received!');
-  console.log(JSON.parse(req.body.input));
-  console.log(typeof JSON.parse(req.body.input))
+  console.log(req.body.input);
+  console.log(typeof req.body.input)
 
   // if (err) {
   //   console.log('Error with post request from post handler');
