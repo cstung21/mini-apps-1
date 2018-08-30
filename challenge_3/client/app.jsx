@@ -135,6 +135,7 @@ class Account extends React.Component {
       },
       success: function(data, results) {
         console.log('Account successfully created!');
+        console.log('Data:', data);
       }
     });
     this.props.handleCreateAccountClick();
