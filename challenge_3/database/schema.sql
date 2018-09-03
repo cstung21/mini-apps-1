@@ -1,4 +1,4 @@
-DROP DATABASE checkout;
+-- DROP DATABASE checkout;
 CREATE DATABASE checkout;
 
 USE checkout;
@@ -14,9 +14,9 @@ CREATE TABLE customer (
   city VARCHAR(60) NOT NULL,
   state VARCHAR(2) NOT NULL,
   zip_code CHAR(5) NOT NULL,
-  phone VARCHAR(11) NOT NULL,
+  phone VARCHAR(15) NOT NULL,
   credit_card_no VARCHAR(20) NOT NULL,
-  expiry_date VARCHAR(5) NOT NULL,
+  expiry_date VARCHAR(10) NOT NULL,
   cvv VARCHAR(4) NOT NULL,
   billing_zip VARCHAR(5) NOT NULL
 )
