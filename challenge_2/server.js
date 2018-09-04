@@ -11,19 +11,16 @@ app.use(express.static(path.join(__dirname, '/client')));
 //   next();
 // });
 
+app.use(bodyParser.json());
 
-app.post('/csv', bodyParser.json(), function(req, res) {
-  console.log('POST request has been received!');
-  console.log(req.body.input);
-  console.log(typeof req.body.input)
+app.post('/csv', function(req, res) {
+  console.log('POST request from client has been received!');
 
-  // if (err) {
-  //   console.log('Error with post request from post handler');
-  // } else {
-  // var parsedInput = JSON.parse(req.body.input);
-  // console.log('PARSED BODY:', parsedInput)
-  res.status(200).send('post success');
-  // }
+  let data = req.body;
+  console.log(data);
+  console.log(typeof data)
+  res.status(200).send(JSON.stringify(data));
+
 });
 
 

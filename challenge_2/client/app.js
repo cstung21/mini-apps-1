@@ -38,13 +38,14 @@ var app = {
     $.ajax({
       url: 'http://localhost:3000/csv',
       method: 'POST',
-      data: JSON.stringify({input}),
+      data: input,
       contentType: 'application/json',
       error: () => {
         console.log('error occurred for ajax post req');
       },
-      success: () => {
+      success: (data) => {
         console.log('ajax post req successful');
+        $(".output").text(data);
       }
     });
   }
